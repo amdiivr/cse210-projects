@@ -4,40 +4,33 @@ class Program
 {
     static void Main(string[] args)
     {
+        //APPLIED MENU//
         Console.WriteLine("Welcome to the Journal Program!");
 
-        Journal jou1 = new Journal();
-        jou1._write = "Write";
-        jou1._display = "Display";
-        jou1._load = "Load";
-        jou1._save = "Save";
-        jou1._quit = "Quit";
+        Entry jou1 = new Entry();
+        jou1._write = "1. Write";
+        jou1._display = "2. Display";
+        jou1._load = "3. Load";
+        jou1._save = "4. Save";
+        jou1._quit = "5. Quit";
 
-        jou1.Menu();
+        Journal allMenu = new Journal();
+        allMenu._menu.Add(jou1);
 
-        Entry prom1 = new Entry();
-        prom1._prompts = "Who was the most interesting person I interacted with today?";
+        allMenu.Menu();
 
-        Entry prom2 = new Entry();
-        prom2._prompts = "What was the best part of my day?";
+        //CREATING A LIST WITH THE QUESTIONS 
+        PromptGenerator listP = new PromptGenerator();
+        listP._promptList = new List<string>
+        {
+            "Who was the most interesting person I interacted with today?", 
+            "What was the best part of my day?", 
+            "How did I see the hand of the Lord in my life today?", 
+            "What was the strongest emotion I felt today?", 
+            "If I had one thing I could do over today, what would it be?"
+        };
 
-        Entry prom3 = new Entry();
-        prom3._prompts = "How did I see the hand of the Lord in my life today?";
-
-        Entry prom4 = new Entry();
-        prom4._prompts = "What was the strongest emotion I felt today?";
-
-        Entry prom5 = new Entry();
-        prom5._prompts = "If I had one thing I could do over today, what would it be?";
-
-        PromptGenerator random = new PromptGenerator();
-        random._randomPrompt.Add(prom1);
-        random._randomPrompt.Add(prom2);
-        random._randomPrompt.Add(prom3);
-        random._randomPrompt.Add(prom4);
-        random._randomPrompt.Add(prom5);
-
-        random.Display();
-
-    }
-}
+        listP.DisplayPrompt();
+    }     
+}  
+        

@@ -1,17 +1,22 @@
 using System;
 
-public class PromptGenerator
+public class PromptGenerator 
 {
-    public List<Entry> _randomPrompt = new List<Entry>();
+    public List<string> _promptList = new List<string>();
 
-    public void Display()
+    public void DisplayPrompt()
     {
-        Console.WriteLine(_randomPrompt);
-        
-        foreach (Entry prompt in _randomPrompt)
+        Console.Write($"What would you like to do? ");
+        string toDo = Console.ReadLine();
+            
+        if (toDo == "1")
         {
-            prompt.Display();
-        }
-        
+            Random r = new Random();
+            int getRandom = r.Next(0, _promptList.Count());
+
+            Console.WriteLine(_promptList[getRandom]);
+            string answer = Console.ReadLine();
+        }    
     }
 }
+
