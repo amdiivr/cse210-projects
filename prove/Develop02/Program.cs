@@ -31,6 +31,12 @@ class Program
         };
 
         listP.DisplayPrompt();
+
+        //CREATING A ANSWER TEXT//
+
+        // Journal myJournal = new Journal();
+        // myJournal.Run();
+        
     }     
 }  
         
