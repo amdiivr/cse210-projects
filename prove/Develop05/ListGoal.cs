@@ -25,7 +25,7 @@ public class ListGoal : Goal
         _list.Add(peron);
     }
 
-    public void ListaGet()
+    public void GetList()
     {
         foreach(string cola in _list)
         {
