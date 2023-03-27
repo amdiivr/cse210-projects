@@ -6,6 +6,7 @@ class Program
     {
         Console.WriteLine("\nHello Foundation2 World!");
 
+        Console.WriteLine("\n_____________First Order_____________");
         Product firstProduct = new Product();
         firstProduct.GetInfoProduct("Milk", 1254);
         firstProduct.GetTotalPrice(11.2, 10);
@@ -31,7 +32,7 @@ class Program
         secondProduct.DisplayTotalPrice(5);
 
         // Second Order // 
-        Console.WriteLine("Second Order");
+        Console.WriteLine("\n_____________Second Order_____________");
 
         Product thirdProduct = new Product();
         thirdProduct.GetInfoProduct("Soda", 1145);
