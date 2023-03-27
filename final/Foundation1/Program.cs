@@ -6,6 +6,7 @@ class Program
     {
         Console.WriteLine("\nHello Foundation1 World!");
 
+        Console.WriteLine("\n\n__________________________First Video__________________________");
         Video firstVideo = new Video();
         firstVideo.title = "Dogs running";
         firstVideo.author = "Andy Vasquez";
@@ -14,7 +15,7 @@ class Program
         userComment1.nameUser = "Antonella";
         userComment1.firstComment = "This video es very funny.";
         userComment1.secondComment = "I hope the dogs are good.";
-        userComment1.thirdComment = "We need more videos for the dogs life.";
+        userComment1.thirdComment = "We need more videos for the dogs life.\n\n__________________________Second Video__________________________";
         firstVideo.infoComments.Add(userComment1);
 
         Video secondVideo = new Video();
@@ -25,7 +26,7 @@ class Program
         userComment2.nameUser = "Pedro";
         userComment2.firstComment = "I hope the cats are okay.";
         userComment2.secondComment = "Seeing cats playing relaxes me.";
-        userComment2.thirdComment = "Growing cats can be more hyperactive.";
+        userComment2.thirdComment = "Growing cats can be more hyperactive.\n\n__________________________Third Video__________________________";
         secondVideo.infoComments.Add(userComment2);
 
         Video thirdVideo = new Video();
