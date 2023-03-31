@@ -13,31 +13,16 @@ public class Goal
         _description = description;
         _points = points;
     }
-
-    public string GetName()
-    {
-        return _name;
-    }
-
-    public string GetDescription()
-    {
-        return _description;
-    }
-
-    public int GetPoints()
-    {
-        return _points;
-    }
-
+    
     public virtual string SetGoal()
     {
         Console.Write("What is the name of your goal? ");
-        string inputName = Console.ReadLine();
+        _name = Console.ReadLine();
         Console.Write("What is a short description of it? ");
-        string inputDescription = Console.ReadLine();
+        _description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
-        int inputPoint = int.Parse(Console.ReadLine());
-        string concatenate = $"1. [ ] {inputName},({inputDescription})";
+        _points = int.Parse(Console.ReadLine());
+        string concatenate = $"1. [ ] {_name},({_description})";
         return concatenate;
     }
 }
