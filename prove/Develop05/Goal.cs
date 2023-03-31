@@ -22,7 +22,7 @@ public class Goal
         _description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         _points = int.Parse(Console.ReadLine());
-        string concatenate = $"1. [ ] {_name},({_description})";
+        string concatenate = $"1. [ ] {_name} ({_description})";
         return concatenate;
     }
 }

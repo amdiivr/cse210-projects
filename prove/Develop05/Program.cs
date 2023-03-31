@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -10,11 +11,9 @@ class Program
 
         string inputGoal = "";
 
-        string fileName = "";
-
         while(input != "6")
         {
-            Console.WriteLine("\nYou have  points.");
+            Console.WriteLine("\nYou have 0 points.");
 
             Console.WriteLine("\nMenu Options:");
             Console.WriteLine("\t1. Create New Goal\n\t2. List Goals\n\t3. Save Goals\n\t4. Load Goals\n\t5. Record Event\n\t6. Quit");
@@ -28,9 +27,11 @@ class Program
                 Console.Write("Which type of goal would you like to create? ");
                 inputGoal = Console.ReadLine();
 
+                string filename = "myFile.txt";
+
                 if (inputGoal == "1")
                 {
-                    using (StreamWriter outputFile = new StreamWriter(fileName))
+                    using (StreamWriter outputFile = new StreamWriter(filename))
                     {
                         Goal goal = new Goal("name", "description", 0);
                         outputFile.WriteLine(goal.SetGoal());
@@ -38,7 +39,7 @@ class Program
                 }
                 else if (inputGoal == "2")
                 {
-                    using (StreamWriter outputFile = new StreamWriter(fileName))
+                    using (StreamWriter outputFile = new StreamWriter(filename))
                     {
                         EternalGoal eternalGoal = new EternalGoal("name", "description", 0);
                         outputFile.WriteLine(eternalGoal.SetGoal());
@@ -46,7 +47,7 @@ class Program
                 }
                 else if (inputGoal == "3")
                 {
-                    using (StreamWriter outputFile = new StreamWriter(fileName))
+                    using (StreamWriter outputFile = new StreamWriter(filename))
                     {
                         ListGoal listGoal = new ListGoal("name", "description", 0);
                         outputFile.WriteLine(listGoal.SetGoal());
@@ -54,28 +55,18 @@ class Program
                 }
             }
             else if (input == "2")
-            {   
-                    string[] lines = System.IO.File.ReadAllLines(fileName);foreach (string line in lines)
+            {
+                    string filename = "myFile.txt";
+                    string[] lines = System.IO.File.ReadAllLines(filename);
+                    
+                    foreach (string line in lines)
                     {
-                        if (inputGoal == "1" || inputGoal == "2")
-                        {
-                            string [] parts = line.Split(",");   
-                            string name = parts[0];
-                            string description = parts[1];
-                            Console.WriteLine($"{name} {description}");
-                        }
-                        else
-                        {
-                            string [] parts = line.Split(",");   
-                            string name = parts[0];
-                            string description = parts[1];
-                            string times = parts[2];
-                            Console.WriteLine($"{name} {description} {times}");  
-                        }
+                        System.Console.WriteLine(line);
+                    }
                         
-                    }          
-            }
+            }          
         }
+    }
 
-    }   
-}
+}   
+
